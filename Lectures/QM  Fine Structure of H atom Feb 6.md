@@ -19,7 +19,7 @@ $\vec{B} = -\frac{1}{c} \vec{v}  * \vec{E}$
 This leands to a Zeeman interaction 
 $H_{soc} = - \vec{\mu} \cdot \vec{B}$  whtere $\vec{\mu}$ is the magnetic moment of the $e^-$ , and $\vec{\mu} = -g \mu_B \vec{S}/\hbar$ where $g$~$2$ , $\mu_B = \frac{e \hbar}{mc}, \vec{S}= \frac{1}{2}$ 
 $\vec{E} = - \Lambda \phi = \frac{\vec{r}}{r} \frac{d \phi}{d r}$      
-$\Rightarrow H_{soc} = -\frac{e}{mc^2}\vec{S} \cdot (\vec{v} * \vec{r}) \frac{1}{r} \frac{d \phi}{d r}$ , $\phi(r) = -\frac{Z e}{r} \rightarrow \frac{d \phi}{ d r} = \frac{Z e}{r^2}$ . Also we have $\vec{L}= \vec{r} * m \vec{v}*$ 
+$\Rightarrow H_{soc} = -\frac{e}{mc^2}\vec{S} \cdot (\vec{v} \times \vec{r}) \frac{1}{r} \frac{d \phi}{d r}$ , $\phi(r) = -\frac{Z e}{r} \rightarrow \frac{d \phi}{ d r} = \frac{Z e}{r^2}$ . Also we have $\vec{L}= \vec{r} \times m \vec{v}$ 
 $\Rightarrow H_{soc} = (\frac{1}{2}) \frac{Ze^2}{m^2 c^2} \frac{1}{r^3} \vec{L} \cdot \vec{S}$ 
 Note that the $\frac{1}{2}$ comes from the none-intertial frame of the electron.
 
@@ -36,7 +36,7 @@ $L \approx \hbar$ , $S \approx \hbar$. Therefore, $H_{soc} \approx \frac{e^2}{m^
 $n=1 , l=0, H_{soc}=0$ , we then start looking at $n=2$ level.
 $H_k = \frac{-p^4}{8m^3c^2}$ term is rotational invariant as $p^4 = (p \cdot p)^2$ 
 This means $H_k$ is already diagonal in the eigenbasis $\ket{nlm}$ of $H_0$ 
-$E_1^k = =\frac{1}{8m^3c^2}<p^4>_{nlm}$ 
+$E_1^k = =\frac{1}{8m^3c^2}\langle p^4 \rangle_{nlm}$ 
 tricks to evaluate matrix element.
 $H_0 = \frac{p^2}{2m} - \frac{e^2}{r}$ 
 $p^4 = 4m^2(H_0^2 + \frac{2e^2}{r}H_0 + \frac{e^4}{r^2})$ 
