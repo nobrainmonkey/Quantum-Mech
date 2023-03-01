@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb}
+\title{QM Scattering}
+\begin{document}
+\maketitle
+\section*{Scattering recap}
+We have an incident plane wave in the form of $ \Psi_{inc}= e^{ik z}$, and the wave scatter after some local potential with $ \Psi_{scatt} = f( \theta  \phi) \frac{e^{ikr}}{r}$ where our scattering wave is spherically symmetric.
+
+\section*{Partial wave expansion}
+We exploited the symmetric and used spherical polar coordinaes where our solution is $ \phi$ indepedent. We have the following:
+
+\begin{equation}
+e^{ikz} = e^{ikr  \cos  \theta} = \sum_{i=0}^{ \infty} i^l (2l+1) j_l (kr) P_l  \cos  (\theta)
+\end{equation}
+Now we need to solve the Schrodinger equation for $V(r)$. \\ 
+We showed last time that 
+\begin{equation}
+ \psi_k(r) = \sum_{l=0} \frac{u_l (r)}{r}  P_l ( \cos  \theta)
+\end{equation} 
+where $u(r)$ satisfy the equation 
+\begin{equation}
+  \left[ \frac{- hba^2}{2m}  \frac{d^2}{d r^2} + \frac{ \hbar^2 l (L+1)}{2 m r^2} + V(r) \right]u(r) = \frac{ \hbar^2 k^2}{2m}  u(r)
+\end{equation}
+but as $r \rightarrow  \infty$, equation $3$ becomes 
+\begin{equation*}
+u'' + k^2 u = 0
+\end{equation*}
+which gives the solution $u_l \sim_{r \rightarrow  \infty} A_l  \sin(kr - \frac{l  \pi}{2} +  \delta_l )$. Therefore,
+\begin{equation}
+  \psi_k (r) sim_{r \rightarrow  \infty} \sum_{l} \frac{A_l}{2 i} \left[ \frac{e^{i(kr - l \frac{ \pi}{2} +  \delta_l)}}{r} -\frac{e^{-i(kr- \frac{l  \pi}{2}  ) +  \delta_l}}{r}      \right] P_l  (\cos  \theta)
+\end{equation}
+Where the first wave term is the out going radial wave, and the incoming radial wave comes from the expansion for the incoming plane wave.
+\\  
+\\
+This means that the only incoming piece should arise from $ \Psi_{inc} = e^{ikz} $, and we should look at $ \Psi_{inc}$ more carefully. Specifically, we look at $(1)$ at large $r$, and realize that the only $r$ dependency resides in $j_l (kr)$. Therefore, we can re-write $(1)$ as 
+\begin{equation}
+e^{ikz} \sim \sum_{l=0}^{ \infty} i^l (2l+1)  \sin( \frac{kr - l  \pi / 2}{kr}) P_l( \cos  \theta)
+\end{equation}we re-write $i^l  \sin(\frac{kr - l  \pi /2}{kr} )$ as $e^{i l \frac{ \pi}{2} } (\frac{e^{i(kr - l  \pi/2)} -e^{-i( kr - l  \pi /2)}}{2i} ) = \frac{e^{ ikr} - e^{i(kr - l  \pi)}}{2 i} $ Therefore, we can re-write $(5)$ as 
+
+\begin{equation}
+e^{ikz} \sim \sum_{l=0}^{ \infty} \frac{2l + 1}{2ik} \left(\frac{e^{ikr}}{r} - \frac{e^{i(kr- l  \pi)}}{r} \right) P_l(  \cos  \theta)
+\end{equation}
+And the incoming spherical wave in $(4)$ must match with the incoming spherical wave in $(6)$, and the incoming plane wave is the only part of the wave that carry the incoming spherical wave component.
+\\ 
+Therefore, we can match it term by term between $(4)$ and $(6)$ for the incoming spherical wave. Therefore,
+\begin{equation}
+-\frac{A_l}{2i} e^{il  \pi/2} e^{-i   \delta_l} =-\frac{2 l + 1}{2 i k} e^{i l  \pi} \implies A_l = \frac{2l + 1}{k} e^{i l  \pi / 2} e^{i  \delta_l}
+\end{equation}
+substitute the result of $(7)$ into $(4)$ as $r \rightarrow  \infty$ and you get 
+\begin{equation}
+  \psi_k(r) \sim_{r \rightarrow  \infty} e^{ikz} + \sum_{l = 0}^{ \infty}(2l+1) \left[ \frac{e^{2i  \delta_l}-1}{2ik} \right]P_l( \cos  \theta) \ \frac{e^{ikr}}{r} 
+\end{equation}
+This equation will be derived in however
+\\ 
+where the sum part of equation $(8)$ is nothing but $f( \theta)$, and we can write it as:
+\begin{equation}
+f( \theta) = \frac{1}{k} \sum_{l = 0 }^{ \infty} (2l +1) e^{i  \delta_l}  \sin  (\delta_l)P_l  (\cos  \theta)
+\end{equation}
+We want to find $ \delta_l (k)$, and this will give us $f( \theta)$ via $(9)$, and we can calculate $\sigma ( \theta) = \abs{f ( \theta)} ^2$. 
+\\ 
+We can also calculate that $\sigma_{tot} = \int \ d\Omega \abs{f( \theta)} ^2$, where we can exploit the orthogonality of $P_l$. This gives $\sigma_{tot} = \frac{4  \pi }{k^2} \sum_{l = 0 }^{ \infty} (2 l + 1)  \sin^2 ( \delta_l) = \sum_{l = 0 }^{ \infty} \sigma_l$, where $\sigma_l \equiv \frac{4  \pi }{k^2} (2 l + 1)  \sin^2 ( \delta_l) \leq \frac{4  \pi }{k^2} (2 l + 1)$.
+
+\subsection*{Example}
+$V(r) =  \infty \ \text{for } r<r_0$, and $V(r) = 0$ elsewhere. \\ 
+We have our radial wave equation 
+\begin{equation*}
+ \psi_k(r) = \sum_{l} R_l (r) P_l( \cos  \theta)
+\end{equation*}
+where 
+\begin{equation*}
+R_l(r) = A_l j_l (kr)+ B_l n_l (kr)
+\end{equation*}
+Normally, we only have $j_l$ in our $R_l$ because $n_l$ misbehaves near $r=0$. However, in our case, as the wave function must vanish at $r= r_0$. We actually \textbf{can} accept $n_l$ as a valid set of solution.
+\\ 
+Because $R_l (r_0) = 0$, we can get $\frac{B_l}{A_l} = - \frac{j_l (k r_0)}{n_l (k r_0)} $. Next time, we will use this to compute $ \delta_l$ and $\sigma_l$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
